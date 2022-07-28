@@ -1,12 +1,6 @@
-# ParentChildTutorial
+# Bt4
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
-
-## Tutorial
-
-This tutorial describe data communication between parent and child transfer in Angular 2+. We will deal how to transfer data and events from parent to child and vice-versa.
-
-We will see the use of Input and Output decorators to facilitate the communication.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
 ## Development server
 
