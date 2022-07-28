@@ -1,22 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="parent">
-
   <div class="controls">
     <h3>My Parent Component</h3>
     <div></div>
-    <!-- <input [(ngModel)]="parentTxtValue" type="text" class="form-control">
-    <button (click)="onParentButtonClick()" type="button" class="btn btn-primary">Parent Click</button> -->
-
-    <div class="txt">
-      Value of child text box : {{email}}
-    </div>
+    <div class="txt">Value of child text box : {{ email }}</div>
   </div>
   <div class="child">
     <h3>My Child Component</h3>
-    <app-child [parentText]="parentTxtValue" [parentClick]="parentClick"
-    (ontextFromChild)="updateInChildValue($event)"
+    <app-child
+      [parentText]="parentTxtValue"
+      [parentClick]="parentClick"
+      (ontextFromChild)="updateInChildValue($event)"
     ></app-child>
   </div>
 </div>
-
-<!-- <router-outlet></router-outlet> -->
