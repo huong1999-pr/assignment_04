@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Subject } from "rxjs";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-child",
   templateUrl: "./child.component.html",
@@ -14,8 +15,13 @@ export class ChildComponent implements OnInit {
     new EventEmitter<String>();
   clickCount = 0;
   email: String;
-  constructor(private fb: FormBuilder) {}
-  ngOnInit() {}
+  constructor(private fb: FormBuilder, private router: Router) {}
+  ngOnInit() {
+    this.parentClick.subscribe(() => this.incrementValue());
+  }
+  incrementValue() {
+    this.clickCount = this.clickCount + 1;
+  }
   loginForm: FormGroup = this.fb.group({
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required, Validators.minLength(6)]],
@@ -24,6 +30,7 @@ export class ChildComponent implements OnInit {
     if (!this.loginForm.valid) {
       return;
     }
+    console.log(this.loginForm.value);
     this.passToParent.emit(this.email);
   }
 }
